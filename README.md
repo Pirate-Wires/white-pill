@@ -1,10 +1,17 @@
 # white-pill
 
-This repository deploys to Vercel and is hosting a \_redirects file to redirect witepill.pw/_ to https://piratewires.com/_
+This repository deploys a Serverless Function to Vercel for redirecting the whitepill.pw domain to https://piratewires.com/.
 
-To alias:
+The api/index.js file exports a function that redirects all requests to piratewires.com.
+
+Usage
+To alias the domain:
 
 Go to domain registrar's DNS settings for whitepill.pw (Google Domains)
-Create an ALIAS or ANNAME record pointing whitepill.pw to https://white-pill.vercel.app
+Create an ALIAS or ANNAME record pointing whitepill.pw to the Vercel deployment URL
+Now traffic to whitepill.pw will hit the Vercel serverless function first, and get redirected to https://piratewires.com/.
 
-Now traffic to whitepill.pw will hit the Vercel deployment first, and get redirected based on the \_redirects file.
+The function returns a 301 permanent redirect status.
+
+Customization
+To customize the redirect logic, edit the api/index.js file.
