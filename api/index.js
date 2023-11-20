@@ -4,7 +4,7 @@ export default async (req, res) => {
   const path = req.url;
 
   // Construct redirect URL with path
-  const redirectUrl = `https://piratewires.com${path}`;
+  const redirectUrl = `https://piratewires.us${path}`;
 
   res.redirect(301, redirectUrl);
 }
